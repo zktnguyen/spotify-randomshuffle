@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta />
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css" />
-  <title></title>
+  <title>Spotify Random Playlist Shuffler</title>
 </head>
+<body id="gradient">
+  <div class="container" id="main-body">
+    <div class="row">
+      <div class="col-xs-8 col-md-8 col-centered">
+        <form>
+          <div class="form-group">
+            <label for="searchForArtists">Input Artist name, separated by commas</label>
+            <input type="search" id="searchForArtists" class="form-control" value="Fetty Wap, Drake"/>
+            <br /><label for="maxSize">Maximum size of playlist</label>
+            <input type="number" class="form-control" id="maxSize" value="25" max="100"/>
+            <small class="form-text text-muted">Please choose a reasonable size.</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8 col-md-8 col-centered">
+        <div id="playlist">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <script src="script.js"></script>
 </html>

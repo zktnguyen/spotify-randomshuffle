@@ -1,0 +1,15 @@
+.col-centered {
+  float:none;
+  margin: 0 auto;
+}
+body {
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+}
+
+#main-body {
+  padding-top: 40px;
+}
+#gradient {
+  background-color: #7FFFD4;
+}
