@@ -68,9 +68,32 @@ app.retrieveTracks = function(albums){
 
 app.createTrackList = function(data){
   data.forEach(function(song){
-    app.tracklist.push(song.id);
+    app.tracklist.push(song);
   });
 };
+
+app.shuffle = function(playlist){
+  for (var i = 0; i < playlist.length; i++){
+    var j = Math.floor(Math.random() * playlist.length);
+    var temp = playlist[i];
+    playlist[i] = playlist[j];
+    playlist[j] = temp;
+  }
+  return playlist;
+};
+
+app.sortByArtist = function(playlist){
+
+};
+
+app.sortBySong = function(playlist){
+
+};
+
+app.sortByDate = function(playlist){
+
+};
+
 // random tracks, split the amount of numArtists
 // create the playlist
 app.create = function() {
@@ -80,15 +103,14 @@ app.create = function() {
   else size = app.playlistSize;
   for (var i = 0; i < size; i++){
     var randomIndex = Math.floor(Math.random() * app.tracklist.length);
-    if ($.inArray(app.tracklist[randomIndex], randomPlaylist) >= 0) console.log("duplicate");
     while ($.inArray(app.tracklist[randomIndex], randomPlaylist) >= 0){
       randomIndex = Math.floor(Math.random() * app.tracklist.length);
-      console.log("attempting to remove duplicate at " + i);
     }
     randomPlaylist.push(app.tracklist[randomIndex]);
   }
   var baseURL = 'https://embed.spotify.com/?theme=white&uri=spotify:trackset:My Playlist:';
-  randomPlaylist = randomPlaylist.join(',');
+  randomPlaylist = app.shuffle(randomPlaylist);
+  randomPlaylist = randomPlaylist.map(song => song.id).join(',');
   var embedPlaylist = "<iframe src='" + baseURL + randomPlaylist + "' height='400'></iframe>";
   $('#playlist').empty();
   $('#playlist').append(embedPlaylist);
@@ -106,7 +128,6 @@ app.init = function() {
 
 $('form').on('reset', function(e){
   e.preventDefault();
-  console.log('clearing');
   $('input[id=searchForArtists]').val('');
   $('input[id=maxSize]').val(0);
 });
