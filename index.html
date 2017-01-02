@@ -12,7 +12,7 @@
   <div class="container" id="main-body">
     <div class="row">
       <div class="col-xs-8 col-md-8 col-centered">
-        <form>
+        <form id="mainForm">
           <div class="form-group">
             <label for="searchForArtists">Input Artist name, separated by commas</label>
             <input type="search" id="searchForArtists" class="form-control" value="Fetty Wap, Drake"/>
@@ -22,13 +22,15 @@
           </div>
 
           <button type="submit" class="btn btn-primary">Create</button>
+          <button type="reset" class="btn btn-secondary">Clear</button>
+
         </form>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-8 col-md-8 col-centered">
         <div id="playlist">
-          
+
         </div>
       </div>
     </div>

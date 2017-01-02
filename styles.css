@@ -13,3 +13,15 @@ body {
 #gradient {
   background-color: #7FFFD4;
 }
+
+#playlist {
+  color: black;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+#playlist iframe {
+  border: none;
+  height: 400px;
+  width: 100%;
+}
